@@ -6,7 +6,7 @@ import random
 def submit(event=None):
     if timer_running:
         user_answer = answer_var.get()
-        if user_answer.isdigit():
+        if user_answer.isdigit() or (user_answer.startswith('-') and user_answer[1:].isdigit()):
             user_answer = int(user_answer)
             correct_answer = calculate_correct_answer()
             submitted_answers.append(user_answer)
